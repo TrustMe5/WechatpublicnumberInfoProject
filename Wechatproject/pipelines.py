@@ -55,10 +55,10 @@ reload(sys)
 sys.setdefaultencoding( "utf-8"  )
 class WechatprojectPipeline(object):
     def __init__(self):
-        self.file =open('processing.csv','wb')
+        self.file =open('processing.csv','a')
     def process_item(self, item, spider):
         open_file_object=csv.writer(self.file)
-        open_file_object.writerow([item['username'],item['intro'],item['link']])
+        open_file_object.writerow([item["username"],item["intro"],item["link"]])
      #   line = json.dumps(dict(item))+'\n'
      #   title=item['title']
      #   link=item['link']
